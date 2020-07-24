@@ -1,14 +1,14 @@
-const { getLocalStorage } = require('./local');
-
+// const { getLocalStorage } = require('./local');
+import localStorage from '@react-native-community/async-storage';
 const cache = {};
 
 class Storage {
   constructor(prefix, options = {}) {
     this._prefix = prefix;
 
-    const { customLocalStorage = getLocalStorage() } = options;
+    // const { customLocalStorage = getLocalStorage() } = options;
 
-    this.localStorage = customLocalStorage;
+    this.localStorage = localStorage;
   }
 
   setPrefix(prefix) {
